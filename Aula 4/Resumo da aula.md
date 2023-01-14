@@ -30,6 +30,23 @@ Agora se quiser checar o valor e o tipo pode se utilizar === ou !==
 ```js
 console.log(age === 26) // True
 console.log(age !== '26') // False
+```
+Checando <> em int
+```js
+console.log(age > 26) //False 
+console.log(age < 26) //False
+console.log(age <= 26) //True
+console.log(age >= 26) //True
 
+```
+Checando <> em strings
+
+```js
+const name = 'a'
+console.log(name > 'b') //False
+console.log(name < 'b') //True
+console.log(name > 'B') //True pois em JS as letras minusculas são consideras > maiusculas na ordem 
+console.log(name < 'B') //False pois em JS as letras minusculas são consideras > maiusculas na ordem 
+console.log(name = 'A') //False pois a != de A
 
 ```
