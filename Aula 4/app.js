@@ -53,3 +53,5 @@ const crazyConversion = Number('Maça')
 const convertNumber = String(97)
 const booleanConversion = Boolean(10)
 console.log(booleanConversion, typeof booleanConversion)
+
+console.log(name.arrayInclude('a'))
