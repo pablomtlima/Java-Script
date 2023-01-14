@@ -1,3 +1,4 @@
+## booleans
 Metodo includes
 
 ```js
@@ -11,5 +12,3 @@ const names = ('pablo', 'matos', 'lima')
 const filtername = names.arrayIncludes('lima') //retorna true se a var for encontrada no array
 
 ```
-
-Nesta aula fui apresentado aos metodos booleans 
