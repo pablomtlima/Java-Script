@@ -42,4 +42,14 @@
 
 
 //Conversão de tipos
-let score
+let score = '100'
+
+// score = Number(score)
+
+// console.log(score + 1)
+// console.log(typeof score)
+
+const crazyConversion = Number('Maça')
+const convertNumber = String(97)
+const booleanConversion = Boolean(10)
+console.log(booleanConversion, typeof booleanConversion)
