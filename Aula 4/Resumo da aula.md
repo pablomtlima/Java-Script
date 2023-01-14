@@ -6,10 +6,10 @@ const email = 'pablomtlima1@gmail.com'
 const filtermail = email.includes('@') //retorna True se '@' for encontrada na const email
 
 ```
-Metodo arrayIncludes
+Metodo includes
 ```js
 const names = ('pablo', 'matos', 'lima')
-const filtername = names.arrayIncludes('lima') //retorna true se a var for encontrada no array
+const filtername = names.includes('lima') //retorna true se a var for encontrada no array
 
 ```
 Posso checar da seguinte forma 
@@ -28,25 +28,37 @@ Por que quando há == ou != o java script faz uma conversão antes de checar
 Agora se quiser checar o valor e o tipo pode se utilizar === ou !==
 
 ```js
-console.log(age === 26) // True
-console.log(age !== '26') // False
+console.log(age === 26)  // True
+console.log(age !== '26')  // False
 ```
 Checando <> em int
 ```js
-console.log(age > 26) //False 
-console.log(age < 26) //False
-console.log(age <= 26) //True
-console.log(age >= 26) //True
-
+console.log(age > 26)  //False 
+console.log(age < 26)  //False
+console.log(age <= 26)  //True
+console.log(age >= 26)  //True
+ 
 ```
 Checando <> em strings
 
 ```js
 const name = 'a'
-console.log(name > 'b') //False
-console.log(name < 'b') //True
-console.log(name > 'B') //True pois em JS as letras minusculas são consideras > maiusculas na ordem 
-console.log(name < 'B') //False pois em JS as letras minusculas são consideras > maiusculas na ordem 
-console.log(name = 'A') //False pois a != de A
+console.log(name > 'b')  //False
+console.log(name < 'b')  //True
+console.log(name > 'B')  //True pois em JS as letras minusculas são consideras > maiusculas na ordem 
+console.log(name < 'B')  //False pois em JS as letras minusculas são consideras > maiusculas na ordem 
+console.log(name = 'A')  //False pois a != de A
 
+```
+## Tipos 
+Checar o tipo de um dado 
+```js
+const dado1 = 1
+const dado2 = True
+const dado3 = 'Str'
+
+console.log(typeOf dado1,)  //number
+console.log(typeOf dado2,)  //boolean
+console.log(typeOf dado3,)  //string
+console.log(typeOf dado3,)  //string
 ```
