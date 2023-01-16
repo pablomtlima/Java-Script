@@ -71,6 +71,5 @@ for (i=0; i < arrays.length; i++){
     console.log(`I=`,i,'a=',a)
     console.log(`O valor da soma até aqui é`,soma)
   }
-
 }
 ```
