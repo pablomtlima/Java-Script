@@ -1,5 +1,5 @@
 ## Functions
-<h2>Existem duas formas de declara funções </h2>
+# Existem duas formas de declara funções 
 A 1º é a: Function declaration
 A function declaration pode ser declarada em qualquer lugar do codigo pois o Java Script puxa a função para cima por debaixo dos panos 
 ```js
@@ -9,7 +9,7 @@ function sayHi() { //function + nome da função ()
 sayHi() // chamando a função sayHI
 
 ```
-<h2>Function expresion</h2>
+# Function expresion 
 Já na function expresion isso não acontece, logo se a função for chamada acima da sua criação, isso vai gerar um erro.
 
 ```js
@@ -20,7 +20,7 @@ const showFood = function (){ // const + nome da função = function ()
 showFood()  // chamando a função showFood
 ```
 
-<h2>Argumentos, parâmetros e default parameters</h2>
+# Argumentos, parâmetros e default parameters 
 ```js
 
 const myFunc = function (name){ //name é uma variável
@@ -42,7 +42,7 @@ myFunc() // considera o valor armazenado inicialmente em caso do parâmetro esta
 myFunc('Pablo', 'Matos') // envia 'Pablo' para name e envia 'Matos' para lastName
 ```
 
-<h2>Retornando Valores</h2>
+# Retornando Valores
 
 ```js
 const double = function(number){
