@@ -31,6 +31,21 @@ const double = number => number * 2
 
 Porém so pode ser feito com uma expresão, não tem como fazer ela retornar um switch um if.
 
-==========================================================================
-## Diferença entre metodos e função 
+## CallBacks
 
+Funções callbacks é quando uma função é passada como argumento de outra função
+
+```js
+function ola () {
+    alert('Olá' + name)
+}
+
+function recebeDados(callback){
+    let name = prompt('Insira seu nome:')
+    callback(name)
+}
+
+recebeDados(ola)
+
+
+```
