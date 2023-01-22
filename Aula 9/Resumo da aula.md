@@ -49,3 +49,6 @@ recebeDados(ola)
 
 
 ```
+## Diferença entre método e função 
+
+A diferença é que um método é um função criada dentro de um objeto e a função são criadas fora de um objeto mas que no fim fazem a mesma coisa com nomes diferentes
