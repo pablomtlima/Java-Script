@@ -62,9 +62,9 @@ scoreOne = 100
 console.log(`scoreOne: ${scoreOne} | scoreTwo: ${scoreTwo}`)
 ```
 ## Valores de referencia 
-```js
-Em valores  de referencia quando dizendo que uma variável recerbe outra o que acontece é que é criado um apontador para o mesmo objeto logo ao modificar o objeto 1 o 2 sofre alterações
 
+Em valores  de referencia quando dizendo que uma variável recerbe outra o que acontece é que é criado um apontador para o mesmo objeto logo ao modificar o objeto 1 o 2 sofre alterações
+```js
 let userOne = {name: 'Pablo', age: 26}
 let userTwo = userOne
 
