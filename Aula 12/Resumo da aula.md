@@ -1,6 +1,6 @@
-```js objetos em arrays 
+## Ojetos em arrays 
 
-
+```js
 let user = {
     name: 'Pablo',
     age: 26,
@@ -27,11 +27,9 @@ let user = {
 
 
 user.logBlogPost()
-
-/*================================================*/
-
-// o objeto Math
-
+```
+## O objeto Math
+```js
 console.log(Math)
 console.log(Math.PI)
 console.log(Math.E)
@@ -42,10 +40,38 @@ console.log(Math.round(area))  // arredonda um número
 console.log(Math.floor(area))  // arredonda um número para baixo
 console.log(Math.ceil(area))  // arredonda um número para cima
 console.log(Math.trunc(area))  // remove tudo depois do ponto e retona o inteiro
-
-// números aléatorios
-
+```
+## Números aléatorios
+```js
 const randomNumber = (Math.random())
 console.log(randomNumber)
 
 console.log(Math.round(randomNumber * 100))
+```
+## Valores primitivos 
+
+Em valores primitivos quando dizendo que uma variável recerbe outrao que acontece é que é armazenado na memoria uma cópia, logo se a veriável 1 for modificada 2 dois não tem reflexo da 1
+```js
+let scoreOne = 50
+let scoreTwo = scoreOne
+
+console.log(`scoreOne: ${scoreOne} | scoreTwo: ${scoreTwo}`)
+
+scoreOne = 100
+
+console.log(`scoreOne: ${scoreOne} | scoreTwo: ${scoreTwo}`)
+```
+## Valores de referencia 
+```js
+Em valores  de referencia quando dizendo que uma variável recerbe outra o que acontece é que é criado um apontador para o mesmo objeto logo ao modificar o objeto 1 o 2 sofre alterações
+
+let userOne = {name: 'Pablo', age: 26}
+let userTwo = userOne
+
+console.log(userOne, userTwo)
+
+userOne.age = 32
+
+console.log(userOne, userTwo)
+
+```
