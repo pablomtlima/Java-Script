@@ -37,11 +37,12 @@ const people = ['Pablo', 'Fabiana', 'Sofia']
 // })
 
 
-const h1 = document.querySelector('h1')
-const div = document.querySelector('div.content')
+const list = document.getElementById ('list') // pegou o item pelo id
 
-console.log(h1.innerHTML += '<p>Esse é o novo título</p>')
+list.innerHTML += `<li type='I'><a href="#">Item ${list.children.length+1}</a></li>`
+list.innerHTML += `<li type='I'></li>`
+list.innerHTML += `<li type='I'></li>`
+list.innerHTML += `No item "${people.join(', ')}" o ultimo é  ${people.pop()} e o primeiro é ${people.shift()} `
 
-people.forEach(people => {
-    div.innerHTML += `<p>${people} Tavares</p>`
-})
+
+list.innerHTML += "<p><h1>Macaco velho não aprende truque novo</h1></p>"
