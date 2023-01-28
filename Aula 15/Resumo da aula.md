@@ -16,9 +16,10 @@ No trecho abaixo supondo que a gente queira declarar uma constante para cada ele
 Uma maneira de fazer isso é armazenar a referencia dele, e usar a referencia para obter uma elemento children para obter as referencias dos elementos filhos.
 
 ## Para converter um HTMLcollection em um array devemos passar o HTMLcolletion como argumento de um metodo from de uma função construtora array
-
+Retorna um HTML collection e relembrando que HTMLcollection não é compativél com forEatch()
 ```js
-console.log(article.children) //retorno um HTML collection e relembrando que HTMLcollection não é compativél com forEatch()
+
+console.log(article.children) //
 ```
 Converte um HTMLCollection em um array 
 ```js
