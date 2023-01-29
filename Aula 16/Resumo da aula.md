@@ -1,5 +1,5 @@
 ```js
-****
+
 // const button = document.querySelector('.button')
 
 // button.addEventListener('click', () => {
@@ -29,3 +29,15 @@ button.addEventListener('click', () => {
     ul.prepend(li) // insere o elemento que ele recebeu como argumento, como primeiro filho desse elemento no qual ele foi encadeado
     // ul.append(li) // insere o elemento que ele recebeu como argumento, como ultimo filho desse elemento no qual ele foi encadeado
 })
+```
+## nextSibling vs nextElementSibling
+
+nextSibling retorna o próximo nó (um nó de elemento, um nó de texto ou um nó de comentário). Os espaços em branco entre os elementos também são nós de texto.
+
+nextElementSibling retorna o próximo elemento (não nós de texto e comentário).
+
+## previousSibling vs previousElementSibling
+
+PreviousSibling retorna o nó anterior (um nó de elemento, um nó de texto ou um nó de comentário). Os espaços em branco entre os elementos também são nós de texto.
+
+PreviousElementSibling retorna o elemento anterior (não os nós de texto e comentários).
