@@ -40,4 +40,18 @@ lis.forEach((li) => {
         clickedElement.remove()
     })
 })
+```
 
+
+## Event Delegation
+Um problema de colocar um addEventListener para cada nova tag inserida é que pode causar travamento da aplicação dependendo do tamanho.
+Uma forma de contornar isso é com o event delegation, dentro do event.target existe uma propriedade chamada de tagName que é armazenada com o event.target.
+Logo se adicionar uma condição que checa se o event.target é igual ao item clicado 'LI' no exemplo abaixo podemos manipula-lo sem que hja propagação para o pai UL no caso
+```js
+ul.addEventListener('click' , event =>{
+    const clickedElement = event.target
+    if (clickedElement.tagName === 'LI'){
+        clickedElement.remove()
+    }
+})
+```
