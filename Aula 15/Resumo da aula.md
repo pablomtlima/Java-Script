@@ -34,6 +34,7 @@ Agora para adicionar uma class para os filhos do article fazemos dessa forma
 })
 ```
 Parents e siblings
+
 o title.parents descrobre quem é o pai, e se encadear mais um parentElement descobre quem é o pai do pai
 ```js 
 const title  = document.querySelector('h2')
