@@ -8,14 +8,26 @@ form.addEventListener('submit' , event => {
     console.log(event.target.username.value)
 })
 
-const userName = 'pablo matos'
-const pattern = /[a-z]{6,}/ // pode receber 
+const userName = '122pablomatos'
+const pattern = /^[a-z]{6,}/ // pode receber 
 
 // Para testar toda regex tem disponivél um método chamado test
 
-const result = pattern.test(userName) 
+const isAMatch = pattern.test(userName) 
 
 // O metodo test vai tentar dá um match entre a regex e a string de argumento da invocação dele
 // Se o match acontecer true é retornado caso contrario false
 
-console.log(result)
+// if(isAMatch){
+    
+//     console.log('O teste da regex passou =)')
+// }else{
+//     console.log('O teste da regex não passou')
+// }
+
+const result = userName.search(pattern) // retorna o index da string onde ocorreu o mach
+// o search retorna -1 quando não há mach
+
+console.log(result) 
+
+// para testar inputs de formulários é mais utilizado o pattern.test(inputDoUsuario) por exemplo
