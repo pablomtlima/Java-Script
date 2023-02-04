@@ -20,3 +20,16 @@ input, button {
     margin: 10px auto;
     padding: 4px;
  }
+
+ .sucess {
+    outline: none;
+    background-color: rgb(190, 241, 190);
+    border: 2px solid green;
+    
+ }
+
+ .error {
+    outline: none;
+    background-color: rgb(255, 172, 172);
+    border: 2px solid red;
+ }
