@@ -25,7 +25,7 @@ console.log(salePrices)
 ```
 Na função passada como argumento para o map, o 'item'  que aqui foi chamado de price que é o item iterado no momento, é retornado pela metade. 
 
-## Agora supondo que queremos retornar em um novo array somente os item acima de 30 reais com desconto de 50% 
+### Agora supondo que queremos retornar em um novo array somente os item acima de 30 reais com desconto de 50% 
 
 ```js
 const products = [
