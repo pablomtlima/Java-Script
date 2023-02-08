@@ -12,7 +12,8 @@
 ``` 
 O método map recebe como argumento uma função que por sua vez, pode receber três argumentos, sendo eles:
 - item : que é o item iterado no momento
-- index : que é o index do item iterado, e o array do item 
+- index : que é o index do item iterado
+- array: que é o array do item 
 
 No exemplo abaixo, através do método map é criada uma nova função na qual os preços estão pela metade
 ```js 
