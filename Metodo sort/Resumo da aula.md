@@ -51,18 +51,23 @@ logo teremos como saída
 [5, 10, 20, 35, 45, 50, 70]
 ```
 poís a função de comparação subtrai a - b se essa função retorna um número negativo significa que 'a'deve vir antes de b por exemplo
-
-a= 20 e b=30 
-se 20-30= -10 um negativo é retornado então a função irá fazer com que 'a' 20 venha antes de 'b' que é 30.
+```js
+a = 20 e b = 30 
+se 20 - 30 = -10 
+```
+um negativo é retornado então a função irá fazer com que 'a' 20 venha antes de 'b' que é 30.
 
 Se a função retorna zero significa que os valores devem permanecer na mesmo posição do original pois:
-
-a=20 e b=20 
-20-20 = 0 
+```js
+a = 20 e b = 20 
+20 - 20 = 0 
+```
 logo a função deve manter os números na posição que em estão
 
 Agora se a função retornar um positivo:
-
-a=30 e b = 20 
-30-20 = 10 retorna um positivo
+```js
+a = 30 e b = 20 
+30 - 20 = 10
+```
+retorna um positivo
 logo o metodo irá fazer com que 'b' venha antes de 'a' e assim vai fazendo por cada item até que todos sejam comparados
