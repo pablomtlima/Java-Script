@@ -28,34 +28,27 @@ const removeTodo = (elementoClicado) => {
   }
 };
 
-const filterTodos = (todos, inputSearch, returnMatchedTodos) => todos
-  .filter((todo) => {
-    const matchedTodos = todo.textContent.toLowerCase().includes(inputSearch)
-    return returnMatchedTodos ? matchedTodos : !matchedTodos
-  })
+const filterTodos = (todos, inputValue, returnMatchedTodos) =>
+  todos.filter(todo => {
+    const matchedTodos = todo.textContent.toLowerCase().includes(inputValue.toLowerCase());
+    return returnMatchedTodos ? matchedTodos : !matchedTodos;
+  });
 
-  const manipulateClasses = (todos, classToAdd, classToRemove) => {
-    todos.forEach((todo) => {
-        todo.classList.add("classToAdd");
-        todo.classList.remove("classToRemove");
-      });
-  } 
-const hideTodos = (todos, inputSearch) => {
-  const todosToHide = filterTodos(todos, inputSearch, false)
-  manipulateClasses(todosToHide, 'hidden', 'd-flex')
-//   .forEach((todo) => {
-//     todo.classList.add("hidden");
-//     todo.classList.remove("d-flex");
-//   });
+const manipulateClasses = (todos, classToAdd, classToRemove) => {
+  todos.forEach(todo => {
+    todo.classList.remove(classToRemove);
+    todo.classList.add(classToAdd);
+  });
 };
 
-const showTodos = (todos, inputSearch) => {
-  const todosToShow = filterTodos(todos, inputSearch, true)
-  manipulateClasses(todosToHide, 'd-flex', 'hidden'sa) 
-    // .forEach((todo) => {
-    //   todo.classList.remove("hidden");
-    //   todo.classList.add("d-flex");
-    // });
+const hideTodos = (todos, inputValue) => {
+  const todosToHide = filterTodos(todos, inputValue, false);
+  manipulateClasses(todosToHide, "hidden", "d-flex");
+};
+
+const showTodos = (todos, inputValue) => {
+  const todosToShow = filterTodos(todos, inputValue, true);
+  manipulateClasses(todosToShow, "d-flex", "hidden");
 };
 
 todosContainer.addEventListener("click", (event) => {
@@ -65,10 +58,10 @@ todosContainer.addEventListener("click", (event) => {
 
 formSearch.addEventListener("input", (event) => {
   const todos = Array.from(todosContainer.children);
-  const inputSearch = event.target.value.trim();
+  const inputValue = event.target.value.trim();
 
-  hideTodos(todos, inputSearch);
-  showTodos(todos, inputSearch);
+  hideTodos(todos, inputValue);
+  showTodos(todos, inputValue);
 });
 
 // foco Pablo, foco, um dia chego lá
