@@ -28,28 +28,34 @@ const removeTodo = (elementoClicado) => {
   }
 };
 
-const filterTodos = (todos, inputSearch, returnMatchedTodos) => {
-  return todos
+const filterTodos = (todos, inputSearch, returnMatchedTodos) => todos
   .filter((todo) => {
     const matchedTodos = todo.textContent.toLowerCase().includes(inputSearch)
-    returnMatchedTodos ? matchedTodos : !matchedTodos
-    });
-};
+    return returnMatchedTodos ? matchedTodos : !matchedTodos
+  })
 
+  const manipulateClasses = (todos, classToAdd, classToRemove) => {
+    todos.forEach((todo) => {
+        todo.classList.add("classToAdd");
+        todo.classList.remove("classToRemove");
+      });
+  } 
 const hideTodos = (todos, inputSearch) => {
-  filterTodos(todos, inputSearch, false).forEach((todo) => {
-    todo.classList.add("hidden");
-    todo.classList.remove("d-flex");
-  });
+  const todosToHide = filterTodos(todos, inputSearch, false)
+  manipulateClasses(todosToHide, 'hidden', 'd-flex')
+//   .forEach((todo) => {
+//     todo.classList.add("hidden");
+//     todo.classList.remove("d-flex");
+//   });
 };
 
 const showTodos = (todos, inputSearch) => {
-  todos
-    .filter((todo) => todo.textContent.toLowerCase().includes(inputSearch))
-    .forEach((todo) => {
-      todo.classList.remove("hidden");
-      todo.classList.add("d-flex");
-    });
+  const todosToShow = filterTodos(todos, inputSearch, true)
+  manipulateClasses(todosToHide, 'd-flex', 'hidden'sa) 
+    // .forEach((todo) => {
+    //   todo.classList.remove("hidden");
+    //   todo.classList.add("d-flex");
+    // });
 };
 
 todosContainer.addEventListener("click", (event) => {
