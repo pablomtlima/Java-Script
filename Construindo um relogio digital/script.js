@@ -1,7 +1,5 @@
 const clockContainer = document.querySelector('.clock-container')
 
-
-
 const updateClock = () => {
     const present = new Date()
     const hours = present.getHours()
