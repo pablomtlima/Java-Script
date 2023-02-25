@@ -1,24 +1,29 @@
-const getTodos = () => { 
+const getTodos = (url, callback) => { 
     const request = new XMLHttpRequest()
 
     request.addEventListener('readystatechange', ()=>{
 
         if(request.readyState === 4 && request.status === 200){
-            console.log('request ok')
-            console.log(request.responseText)
-
+            const data = JSON.parse(request.responseText)
+            callback(null, data)
             return
         }
         if(request.readyState === 4 && request.status !== 200){
-            console.log('Deu ruim nos dados ')
+            callback('Deu ruim nos dados', null)
             return
         }
-        console.log('Ainda não carregou')
     })
 
-    request.open('GET', './todos.json')
+    request.open('GET', url)
     request.send()
 }
 
-getTodos()
-
+getTodos('./json/todos.json',(error, data) => {
+    console.log(data)
+    getTodos('./json/todos-02.json', (error,data) => {
+        console.log(data)
+        getTodos('./json/todos-03.json',(error,data)=>{
+            console.log(data)
+        })
+    })
+})
