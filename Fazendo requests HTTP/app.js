@@ -1,4 +1,4 @@
-const getTodos = (url, callback) => new Promise ( (resolve, reject) =>{    
+const getTodos = url => new Promise ( (resolve, reject) =>{    
     const request = new XMLHttpRequest()
     
     request.addEventListener('readystatechange', ()=>{
