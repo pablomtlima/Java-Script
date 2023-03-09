@@ -17,7 +17,7 @@ const logUsers = async () => {
     console.log(users)
 }
 
-logUsers()
+logUsers().then(response => response.json()).then(gif => console.log(gif))
 
 // try {
 //     console.log(oi)
