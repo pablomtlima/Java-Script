@@ -17,3 +17,4 @@ function Student (name, email) {
 
 const gabrielFialho = new Student('Gabriel Fialho', 'gabrielf@roger.com.br')
 const brenoLemos = new Student('Breno Lemos', 'brenol@rgoe.com.br')
+
