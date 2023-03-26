@@ -1,8 +1,7 @@
 function Student (name, email) {
-  console.log(this)
-    this.name = name
-    this.email = email
-
+  this.name = name
+  this.email = email
+  
 }
 
 Student.prototype.login = function () {
@@ -13,10 +12,22 @@ Student.prototype.logout = function () {
     return `${this.name} saiu`
 }
 
-function TeacherAssistant (name, email, propriedadeProprio) {
-  Student.call(this, name, email)
-  this.propriedadeProprio = propriedadeProprio
+Student.prototype.coment = function () {
+  return `${this.name} comentou`
 }
+
+Student.formatToDataBase = function (aString) {
+  return aString
+    .toUpperCase()
+    .replaceAll(' ', '_')
+
+}
+
+function TeacherAssistant (name, email) {
+  Student.call(this, name, email)
+}
+
+TeacherAssistant.prototype = Object.create(Student.prototype)
 
 TeacherAssistant.prototype.giveBadge = function ({name}){
   return `${this.name} deu uma medalha para ${name}`
@@ -26,7 +37,9 @@ const gabrielFialho = new Student("Gabriel Fialho", "gabrielf@roger.com.br")
 const brenoLemos = new Student("Breno Lemos", "brenol@rgoe.com.br")
 
 const arthurSouza = new TeacherAssistant('Arthur Souza', 'ar@gmail.xom', true)
-console.log(arthurSouza.giveBadge(brenoLemos))
+console.log(arthurSouza.giveBadge(gabrielFialho))
+console.log(arthurSouza)
+console.log(arthurSouza.login === gabrielFialho.login)
 
 
 
@@ -98,4 +111,4 @@ console.log(arthurSouza.giveBadge(brenoLemos))
 // const brenoLemos = new Student("Breno Lemos", "brenol@rgoe.com.br");
 
 // console.log(gabrielFialho, brenoLemos);
-// console.log(Student.formatToDatabase("String para banco de dados"));
+console.log(Student.formatToDataBase("String para banco de dados"));
