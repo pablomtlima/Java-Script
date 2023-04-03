@@ -1,6 +1,7 @@
 function Pessoa (name) {
   this.name = name
 }
+
 Pessoa.prototype.getName = function () {
   return this.name
 }
@@ -9,6 +10,7 @@ function PessoaFisica (name, cpf) {
   Pessoa.call(this, name)
   this.cpf = cpf
 }
+
 PessoaFisica.prototype = Object.create(Pessoa.prototype)
 PessoaFisica.prototype.getCPF = function() {
   return this.cpf
@@ -18,6 +20,7 @@ function PessoaJuridica (name, cnpj) {
   Pessoa.call(this, name)
   this.cnpj = cnpj
 }
+
 PessoaJuridica.prototype = Object.create(Pessoa.prototype)
 PessoaJuridica.prototype.getCNPJ = function() {
   return this.cnpj
@@ -27,6 +30,7 @@ function MEI (name, cnpj) {
   PessoaJuridica.call(this, name, cnpj)
   this.limit = 80000
 }
+
 MEI.prototype = Object.create(PessoaJuridica.prototype)
 MEI.prototype.getLimit = function() {
   return this.limit
