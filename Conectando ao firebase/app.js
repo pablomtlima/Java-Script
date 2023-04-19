@@ -13,7 +13,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig)
 const db = getFirestore(app)
-const collectionGames = collection(db, 'game')
+const collectionGames = collection(db, 'games')
 
 const formAddGame = document.querySelector('[data-js="add-game-form"]')
 const gamesList = document.querySelector('[data-js="games-list"]')
@@ -25,7 +25,7 @@ const formatDate = createdAt => new Intl
 
 const renderGamesList = querySnapshot => {
     if (!querySnapshot.metadata.hasPendingWrites) {
-        gamesList.innerHTML = querySnapshot.docs.reduce((acc, doc ) => {
+        gamesList.innerHTML = querySnapshot.docs.reduce((acc, doc) => {
             const [id, { title, developedBy, createdAt }] = [doc.id, doc.data()]
 
             return `${acc}<li data-id="${id}" class="my-4">
@@ -43,30 +43,45 @@ const renderGamesList = querySnapshot => {
     }
 }
 
-const addGame = e => {
+const to = promise => promise
+    .then(result => [null, result])
+    .catch(error => [error])
+
+const addGame = async e => {
     e.preventDefault()
 
-    addDoc(collectionGames, {
-        title: e.target.title.value,
-        developedBy: e.target.developer.value,
-        createdAt: serverTimestamp()
-    })
-        .then(doc => {
-            console.log('Documento criado com o ID', doc.id)
-            e.target.reset()
-            e.target.title.focus()
-        })
-        .catch(console.log)
+    const [error, doc] = await to(
+        addDoc(collectionGames, {
+            title: e.target.title.value,
+            developedBy: e.target.developer.value,
+            createdAt: serverTimestamp()
+    }))
+
+    if(error) {
+        return console.log(error)
+    }
+
+    console.log('Documento criado com o ID', doc.id)
+    e.target.reset()
+    e.target.title.focus()
 
 }
 
-const deletGame = e => {
+const deletGame = async e => {
     const idRemoveButton = e.target.dataset.remove
-    if (idRemoveButton) {
-        deleteDoc(doc(db, 'games', idRemoveButton))
-            .then(() => console.log('Game removido'))
-            .catch(console.log)
+
+    if (!idRemoveButton) {
+        return
     }
+
+    const [error] = await to(deleteDoc(doc(db, 'games', idRemoveButton)))
+
+    if(error) {
+        console.log(error)
+        return
+    }
+
+    console.log('Game removido')
 }
 
 const handleSnapshotError = e => console.log(e)
